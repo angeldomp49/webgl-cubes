@@ -1,0 +1,7 @@
+/Users/estefaniaramirez/Library/emsdk-main/upstream/emscripten/em++ hello_world.cpp -o hello_world.html
+
+
+hello_world_sdl.c -o hello.html
+
+# optimize by using -01
+./emcc -O1 test/hello_world.cpp
