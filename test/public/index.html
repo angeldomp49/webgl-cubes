@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="index.css" rel="stylesheet">
+    <script>
+        let exports = {};
+    </script>
+    <script src="index.js"></script>
+</head>
+<body>
+<div class="">
+    <cube-hero-section
+            id="root"
+            data-background-image="assets/images/rectangle6.png"
+    >
+        <div class="hero-underlay hero-layer">
+            <h1 id="hero-title1" class="hero-title">Los mejores productos digitales a un 70% de descuento.</h1>
+            <p id="hero-text1" class="hero-text">
+                En todos los productos seleccionados, pregunta por nuestrs promociones y contáctanos
+                para pedidos especiales, ¡no dejes pasar esta oportunidad!
+            </p>
+        </div>
+        <div class="hero-overlay hero-layer">
+            <div class="empty-space" style="height: 20rem;"></div>
+            <div class="hero-button-wrapper">
+                <button id="cta" class="hero-button">Ver promociones</button>
+            </div>
+        </div>
+    </cube-hero-section>
+
+</div>
+
+<script>
+    const cta = document.getElementById("cta");
+
+    cta.addEventListener("click", () => console.log("clicked"));
+</script>
+</body>
+</html>

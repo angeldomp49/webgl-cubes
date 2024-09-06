@@ -1,0 +1,44 @@
+
+@mixin cube-hero-section() {
+
+  .cube-hero-section {
+    width: 100%;
+    height: 600px;
+
+    .hero-layer{
+      position: absolute;
+      width: 100%;
+      height: 600px;
+      top: 0;
+    }
+
+    .hero-background-image{
+      z-index: 1;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .hero-interactive-elements{
+      z-index: 3;
+    }
+
+    .hero-underlay{
+
+      text-align: center;
+      padding-top: 6rem;
+      z-index: 2;
+
+    }
+
+    .hero-overlay{
+      text-align: center;
+      padding-top: 6rem;
+      z-index: 4;
+
+    }
+
+  }
+
+
+
+}

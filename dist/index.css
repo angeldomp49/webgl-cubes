@@ -1,0 +1,30 @@
+.cube-hero-section {
+  width: 100%;
+  height: 600px;
+}
+.cube-hero-section .hero-layer {
+  position: absolute;
+  width: 100%;
+  height: 600px;
+  top: 0;
+}
+.cube-hero-section .hero-background-image {
+  z-index: 1;
+  object-fit: cover;
+  object-position: center;
+}
+.cube-hero-section .hero-interactive-elements {
+  z-index: 3;
+}
+.cube-hero-section .hero-underlay {
+  text-align: center;
+  padding-top: 6rem;
+  z-index: 2;
+}
+.cube-hero-section .hero-overlay {
+  text-align: center;
+  padding-top: 6rem;
+  z-index: 4;
+}
+
+/*# sourceMappingURL=index.css.map */
