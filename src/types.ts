@@ -8,3 +8,15 @@ export type ColoredCubeSettings = {
     position?: Vector3;
     rotation?: Vector3;
 }
+
+export type BrilliantCubeSettings = {
+    color?: Color3;
+    size?: number;
+    position?: Vector3;
+    rotation?: Vector3;
+    alpha?: number;
+}
+
+export type DrawableElement = {
+    draw: () => void;
+}

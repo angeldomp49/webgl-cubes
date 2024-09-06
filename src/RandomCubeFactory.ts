@@ -2,7 +2,10 @@ import * as BABYLON from 'babylonjs';
 import Mesh = BABYLON.Mesh;
 import {ColoredCube} from "./ColoredCube";
 import Scene = BABYLON.Scene;
-import {ColoredCubeSettings} from "./types";
+import {BrilliantCubeSettings, ColoredCubeSettings} from "./types";
+import {randomByLimit} from "./random";
+import {BrilliantCube} from "./BrilliantCube";
+import {fromRGB, rgb} from "./colorFunctions";
 
 export class RandomCubeFactory {
 
@@ -14,13 +17,13 @@ export class RandomCubeFactory {
         const settings: ColoredCubeSettings = {
             size: this.getRandomByLimit(maxSize, minSize),
             color: new BABYLON.Color3(
-                this.getRandomByLimit(1, 0.4),
-                this.getRandomByLimit(1, 0.4),
-                this.getRandomByLimit(1, 0.4)
+                this.getRandomByLimit(0.8, 0.4),
+                this.getRandomByLimit(0.8, 0.4),
+                this.getRandomByLimit(0.8, 0.4)
             ),
             position: new BABYLON.Vector3(
                 this.getRandomByLimit(5, -5),
-                this.getRandomByLimit(5, -5),
+                this.getRandomByLimit(3, -8),
                 this.getRandomByLimit(8, -8)
             ),
             rotation: new BABYLON.Vector3(
@@ -34,8 +37,35 @@ export class RandomCubeFactory {
 
     }
 
+    public createRandomBrilliantCube(scene: Scene): BrilliantCube {
+        const maxSize = 0.4;
+        const minSize = 0.2;
+
+        const settings: BrilliantCubeSettings = {
+            size: this.getRandomByLimit(maxSize, minSize),
+            color: new BABYLON.Color3(
+                randomByLimit(fromRGB(160), 0),
+                randomByLimit(fromRGB(160), 0),
+                randomByLimit(fromRGB(160), 0)
+            ),
+            position: new BABYLON.Vector3(
+                this.getRandomByLimit(5, -5),
+                this.getRandomByLimit(3, -8),
+                this.getRandomByLimit(8, -8)
+            ),
+            rotation: new BABYLON.Vector3(
+                this.getRandomByLimit(1),
+                this.getRandomByLimit(1),
+                this.getRandomByLimit(1)
+            ),
+            alpha: randomByLimit(0.9, 0.6)
+        };
+
+        return new BrilliantCube(scene, settings);
+    }
+
     private getRandomByLimit(limit: number = 1, minimal: number = 0): number{
-        return Math.random() * (limit - minimal) + minimal;
+        return randomByLimit(limit, minimal);
     }
 
 

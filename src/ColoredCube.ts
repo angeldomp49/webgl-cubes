@@ -1,10 +1,10 @@
 import * as BABYLON from 'babylonjs';
 import Scene = BABYLON.Scene;
-import {ColoredCubeSettings} from "./types";
+import {ColoredCubeSettings, DrawableElement} from "./types";
 import Mesh = BABYLON.Mesh;
 import {fromBase256} from "./colorFunctions";
 
-export class ColoredCube {
+export class ColoredCube implements DrawableElement{
 
     private _nativeElement: Mesh;
 
