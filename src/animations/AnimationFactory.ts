@@ -1,8 +1,8 @@
 import * as BABYLON from 'babylonjs';
 import Mesh = BABYLON.Mesh;
-import {RandomFloatingSettings} from "./types";
 import Scene = BABYLON.Scene;
 import {RandomFloatingAnimation} from "./RandomFloatingAnimation";
+import {FollowCursorAnimation} from "./FollowCursorAnimation";
 
 export class AnimationFactory {
 
@@ -15,6 +15,12 @@ export class AnimationFactory {
 
         animation.apply(element, scene, duration);
 
+    }
+
+    public followCursor(element: Mesh, scene: Scene, duration: number, mouseEvent: MouseEvent): void {
+        const animation = new FollowCursorAnimation(60, mouseEvent);
+
+        animation.apply(element, scene, duration);
     }
 
 }
